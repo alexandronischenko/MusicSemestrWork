@@ -25,6 +25,9 @@ namespace MusicSemestrWork.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<byte[]>("Avatar")
+                        .HasColumnType("bytea");
+
                     b.Property<string>("Email")
                         .HasColumnType("text");
 

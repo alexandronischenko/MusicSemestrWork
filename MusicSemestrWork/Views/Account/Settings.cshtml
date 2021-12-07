@@ -1,0 +1,71 @@
+﻿@model MusicSemestrWork.Models.User;
+@{
+    Layout = "_Layout";
+}
+
+
+<form class="container" style="display: flex; flex-direction: row;" asp-action="Settings" asp-controller="Account" method="post" enctype="multipart/form-data">
+
+    <!-- 1 column -->
+    <div style="display: flex; flex-direction: column; justify-content: start; align-items: center; height: 80%; width: 40%">
+        <div style=" height: 100px; width: 100px;">
+            @if (Model.Avatar != null)
+            {
+                <img style='width:200px; height:200px;margin-top:10px' src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Avatar))" />
+            }
+            <p>@Model.Username</p>
+            <p>Пользователь</p>
+        </div>
+    </div>
+
+    <!-- 2 col -->
+    <div class="container" style="display: flex; flex-direction: column; justify-content: start; align-items: flex-start; height: 80%; width: 60%">
+        <div style="width: 100%">
+            <p style="font-size: 30px;">Мой аккаунт</p>
+            <p>Посмотрите и отредактируйте сведения о себе</p>
+        </div>
+
+        <div style="width: 100%; margin-top: 5px;">
+            <p style="font-size: 30px;">Открытая информация</p>
+            <p>Карточка профиля видна всем пользователям этого сайта</p>
+            <p>Имя пользователя</p>
+            <input type="text" name="name" value="@Model.Username" style="color: black;">
+        </div>
+
+        <div style="width: 100%;  margin-top: 5px;">
+            <p style="font-size: 30px;">Аккаунт</p>
+            <p style="">Обновите и редактируйте информацию, которой вы делитесь с сообществом</p>
+            <p>Ваш никнейм</p>
+            <input type="text" name="Username" class="form-control" value="@Model.Username" style="color: black;">
+
+            <p style="margin-top: 5px;">
+                <label>Change password</label>
+                <input name="CurrentPassword" type="password" class="form-control" placeholder="Current password" style="color: black;" />
+                <input name="NewPassword" type="password" class="form-control" placeholder="New password" style="margin-top: 10px; color:black;" />
+            </p>
+
+
+            <p>
+                <label>Аватар</label>
+                <input name="Avatar" type="file" class="form-control" />
+            </p>
+
+            <p style="margin-top: 20px;">
+                <input type="submit" value="Submit" />
+            </p>
+
+
+
+        </div>
+
+    </div>
+
+</form>
+
+<div style="height:100px; margin-top:25px "><br><br /></div>
+<div style="height:100px; margin-top:10px "><br><br /></div>
+
+
+<nav class="navbar fixed-bottom navbar-light bg-dark">
+    <a class="navbar-brand" href="#">Fixed bottom</a>
+</nav>

@@ -1,0 +1,50 @@
+﻿<Properties StartupConfiguration="{237E731E-1367-463A-B088-97ACFF2F66A5}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MusicSemestrWork/Controllers/EmptyClass.cs">
+    <Files>
+      <File FileName="MusicSemestrWork/Services/JWTAuthManager.cs" Line="40" Column="55" />
+      <File FileName="MusicSemestrWork/Controllers/AuthController.cs" Line="91" Column="1" />
+      <File FileName="MusicSemestrWork/Controllers/HomeController.cs" />
+      <File FileName="MusicSemestrWork/Controllers/AccountController.cs" />
+      <File FileName="MusicSemestrWork/Pages/Shared/_Layout.cshtml" />
+      <File FileName="MusicSemestrWork/Views/Account/Profile.cshtml" />
+      <File FileName="MusicSemestrWork/Views/Account/Settings.cshtml" />
+      <File FileName="MusicSemestrWork/Views/Home/Index.cshtml" />
+      <File FileName="MusicSemestrWork/Startup.cs" />
+      <File FileName="MusicSemestrWork/ApplicationContext.cs" />
+      <File FileName="MusicSemestrWork/Models/UserViewModel.cs" />
+      <File FileName="MusicSemestrWork/Views/Auth/Login.cshtml" />
+      <File FileName="MusicSemestrWork/Views/Auth/Register.cshtml" />
+      <File FileName="MusicSemestrWork/Program.cs" />
+      <File FileName="MusicSemestrWork/appsettings.json" />
+      <File FileName="MusicSemestrWork/Controllers/EmptyClass.cs" Line="152" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MusicSemestrWork" expanded="True">
+            <Node name="MusicSemestrWork" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="Services" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Auth" expanded="True" />
+                <Node name="Home" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MusicSemestrWork PreferredExecutionTarget="/Applications/Safari.app" />
+</Properties>

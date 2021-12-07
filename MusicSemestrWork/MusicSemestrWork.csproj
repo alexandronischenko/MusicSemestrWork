@@ -19,6 +19,9 @@
     <None Remove="System.IdentityModel.Tokens.Jwt" />
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <None Remove="Views\Account\" />
+    <None Remove="Services\" />
+    <None Remove="Interfaces\" />
+    <None Remove="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -27,6 +30,9 @@
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Temp\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Services\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Views\Auth\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BQeCs/afpVjqPFDqevVcS6cjqgQ6hhftz3Cfn5ASoMylGSeL3/XYHfaObaWBi14WVp/qjwYNDH4D5zXHrD1BMw==",
+  "dgSpecHash": "qEA/d8/OmY+avaWHrwTh96O57v5QShOEVPJCTYtjDqAgG+bLw1oA8TNgOZsiVsNTc0zwJOlBq6hilrG7eziN0A==",
   "success": true,
-  "projectFilePath": "/Users/alexandronischenko/Documents/GitHub/ITIS_2021/MusicSemestrWork/MusicSemestrWork/MusicSemestrWork/MusicSemestrWork.csproj",
+  "projectFilePath": "/Users/alexandronischenko/Documents/GitHub/ITIS_2021/MusicSemestrWork/MusicSemestrWork/MusicSemestrWork.csproj",
   "expectedPackageFiles": [
     "/Users/alexandronischenko/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/alexandronischenko/.nuget/packages/microsoft.aspnet.identity.core/2.2.3/microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
@@ -86,7 +86,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Пакет \"Microsoft.AspNet.Identity.Core 2.2.3\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.Identity.Core",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"

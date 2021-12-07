@@ -18,37 +18,40 @@ namespace MusicSemestrWork.Controllers
     {
         readonly ApplicationContext db;
         readonly IConfiguration _configuration;
+        public User CurrentUser { get => GetUser(); }
+        private JwtSecurityToken _token;
 
         public HomeController(ApplicationContext options, IConfiguration configuration)
         {
             _configuration = configuration;
             db = options;
         }
-
+        
         public IActionResult Index()
         {
+            //Response.Cookies.Delete("token");
+            return View();
+        }
+
+        public User GetUser()
+        {
             var currentUser = HttpContext.User;
+
             if (Request.Cookies["token"] == null || Request.Cookies["token"] == "")
             {
-                return View(null);
+                return null;
             }
 
             var stream = Request.Cookies["token"];
             var handler = new JwtSecurityTokenHandler();
             var jsonToken = handler.ReadToken(stream);
-            var tokenS = jsonToken as JwtSecurityToken;
+            _token = jsonToken as JwtSecurityToken;
 
-            var id = tokenS.Claims.First(claim => claim.Type == "nameid").Value;
+            var CurrentId = _token.Claims.First(claim => claim.Type == "nameid").Value;
 
-            var user = db.Users.FirstOrDefault(u => u.Id.ToString() == id);
+            var user = db.Users.FirstOrDefault(u => u.Id.ToString() == CurrentId);
 
-            return View(user);
-        }
-
-        [Authorize]
-        public IActionResult Profile()
-        {
-            return View();
+            return user;
         }
     }
 }

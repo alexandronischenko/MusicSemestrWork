@@ -1,165 +1,121 @@
 ﻿@page
-
-<head>
-    <meta charset="UTF-8">
-    <title>SportNews</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css/style.css">
+@{
+    Layout = "_Layout";
+}
 
 
-</head>
+<div class="main-container">
+    <span style="font-size: 180%; margin: 20px;">Новости</span>
+</div>
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">SpOrT</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Новости </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Бомбардиры и Ассистенты</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Форум</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Поиск</a>
-                    </li>
-                </ul>
-                <span class="navbar-text">
-                    <li class="nav-item">
-                        <a href="#">Войти</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Зарегистрироваться</a>
-                    </li>
-                </span>
+<div class="album py-5 bg-white">
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card shadow-sm">
+                    @*<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">*@
+                    @*<title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c" />
+                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">Picture</text>*@
+                        <img src="https://static.riafan.ru/uploads/2021/12/01/992_16x9-216-1638357913.webp" height="225"/>
+                    @*</svg>*@
+
+                    <div class="card-body">
+                        <p class="card-text">Штамп Оксимирон: что презентовал поклонникам главный рэпер страны</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
-    </header>
-    <div class="main-container">
-        <span style="font-size: 180%;">Новости</span>
-    </div>
 
-    <div class="album py-5 bg-light">
-        <div class="container">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://sun1.tattelecom-nbc.userapi.com/impg/YkrcRiMqr2m8DQm7yTzu8DyXaQdMs3FBwQ4scw/ZcHonKIdMbo.jpg?size=761x768&quality=96&sign=5fc18a521b4c61592a1ff3b3e2e49a64&type=album" height="225" />
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Picture</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">Адель, Stromae и 30 Seconds To Mars вернулись! Музыкальные новинки недели.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
+                    <div class="card-body">
+                        <p class="card-text">Король и Шут - самая прослушиваемая группа в российском Spotify по итогам 2021 года </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Picture</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">Название жанра.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Picture</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">Название жанра</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://sun1.tattelecom-nbc.userapi.com/impg/MB0ftrfwgt4z4oOpYMoFk2MSITMEGmNSvW4HWQ/S9BlxcGtIoE.jpg?size=1080x1080&quality=96&sign=91219a82d07df35738c6b7258242767d&type=album" height="225" />
+
+                    <div class="card-body">
+                        <p class="card-text">Imanbek - самый прослушиваемый артист из СНГ, которого чаще всего слушали за пределами России в Spotify по итогам 2021 года</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+</div>
 
-    <div class="album py-5 bg-light">
-        <div class="container">
+<div class="album py-5 bg-light">
+    <div class="container">
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Picture</text></svg>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://sun2.tattelecom-nbc.userapi.com/impg/TKV9t_JA705v7QnxG47xVB6lAFafhj6REgEi9Q/Hu-rkNX0QkM.jpg?size=1080x1143&quality=96&sign=d6d9b9c24c969ca544f1e271675fbbf0&type=album" height="225" />
 
-                        <div class="card-body">
-                            <p class="card-text">Адель, Stromae и 30 Seconds To Mars вернулись! Музыкальные новинки недели.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
+                    <div class="card-body">
+                        <p class="card-text">50 Cent извинился перед Мадонной за то, что высмеял ее обнаженные фотографии</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Picture</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">Название жанра.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Picture</text></svg>
-
-                        <div class="card-body">
-                            <p class="card-text">Название жанра</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://sun1.tattelecom-nbc.userapi.com/impg/yOU_jlQPTmlEq5rJahoQrg60SY-p7poebr6azw/ESCRYI2RIjM.jpg?size=900x900&quality=96&sign=31151a612523f7686285877a41740dd0&type=album" height="225" />
+
+                    <div class="card-body">
+                        <p class="card-text">Eminem признан самым популярным хип-хоп исполнителем на YouTube</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://sun1.tattelecom-nbc.userapi.com/impg/H9bCCo15Si337vRL1XPmp6U-AGBx9VUxUHl5RA/5_hO7jflCRw.jpg?size=749x768&quality=96&sign=11204e649591b6d9dd9c6e97be002198&type=album" height="225" />
+
+                    <div class="card-body">
+                        <p class="card-text">
+                            А как вы оцениваете первый за шесть лет альбом Oxxxymiron'a - "Красота и Уродство"? Оправдались ли ваши ожидания или наоборот?
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-
-    <nav class="navbar fixed-bottom navbar-light bg-dark">
-        <a class="navbar-brand" href="#">Разработчики</a>
-        <a class="navbar-brand" href="#">О нас</a>
-        <a class="navbar-brand" href="#">Помощь</a>
-
-    </nav>
-</body>
-</html>
+</div>

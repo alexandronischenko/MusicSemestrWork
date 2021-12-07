@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using MusicSemestrWork.Interfaces;
+using MusicSemestrWork.Services;
 
 namespace MusicSemestrWork
 {
@@ -36,13 +38,15 @@ namespace MusicSemestrWork
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
-                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Auth/Login");
                     options.LogoutPath = new Microsoft.AspNetCore.Http.PathString("/Home/Logout");
                     options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Home/Index");
-                    options.ExpireTimeSpan = System.TimeSpan.FromDays(2);
+                    options.ExpireTimeSpan = System.TimeSpan.FromHours(1);
                 });
 
-            var key = Encoding.UTF8.GetBytes(Configuration["Jwt:Secret"]);
+
+            var tokenKey = Configuration.GetValue<string>("TokenKey");
+            var key = Encoding.ASCII.GetBytes(tokenKey);
 
             services.AddAuthentication(x =>
             {
@@ -57,13 +61,11 @@ namespace MusicSemestrWork
                 {
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidIssuers = new string[] { Configuration["Jwt:Issuer"] },
-                    ValidAudiences = new string[] { Configuration["Jwt:Issuer"] },
                     ValidateIssuer = true,
                     ValidateAudience = true,
-                    ValidateLifetime = true
                 };
             });
+            services.AddSingleton<IJWTAuthManager>(new JWTAuthManager(tokenKey));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -92,7 +94,7 @@ namespace MusicSemestrWork
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Account}/{action=Register}/{id?}"
+                    pattern: "{controller=Auth}/{action=Register}/{id?}"
                 );
             });
         }

@@ -1,134 +1,107 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
+using MusicSemestrWork;
 using MusicSemestrWork.Models;
+using MusicSemestrWork.Services;
+using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.IO;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
-namespace MusicSemestrWork.Controllers
+namespace FoodSemWork.Controllers
 {
-    public class AccountController : Controller
-    {
-        readonly ApplicationContext db;
-        readonly IConfiguration _configuration;
+	public class AccountController : Controller
+	{
+		private ApplicationContext db;
+		private JwtSecurityToken _token;
+		public User CurrentUser { get => GetUser(); }
+        public string ClaimsType { get; private set; }
 
-        public AccountController(ApplicationContext options, IConfiguration configuration)
-        {
-            _configuration = configuration;
-            db = options;
-        }
-        // Registration
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
+        public AccountController(ApplicationContext context)
+		{
+			db = context;
+		}
 
-        [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(User model)
-        {
-            if (ModelState.IsValid)
+		public IActionResult Index()
+		{
+
+			if (CurrentUser == null)
+			{
+				return RedirectToAction("Register", "Auth");
+			}
+			return View(CurrentUser);
+		}
+
+		public IActionResult Profile()
+		{
+            if (CurrentUser == null)
             {
-                User user = await db.Users.FirstOrDefaultAsync<User>(u => u.Email == model.Email);
-
-                if (user == null)
-                {
-                    var currentUser = new User
-                    {
-                        Id = Guid.NewGuid(),
-                        Email = model.Email,
-                        Password = model.Password,
-                        Username = model.Username
-                    };
-                    db.Users.Add(currentUser);
-                    await db.SaveChangesAsync();
-
-                    return RedirectToAction("Login", "Account");
-                }
-                else
-                    ModelState.AddModelError("", "user already exists");
-
-            }
-            return View(model);
-        }
-
-        // Login
-        [HttpGet]
-        public IActionResult Login()
-        {
-            if (Request.Cookies["token"] != null)
-                return RedirectToAction("Index", "Home");
-            return View();
-        }
-
-        [AllowAnonymous]
-        [HttpPost]
-        public async Task<IActionResult> Login(User model)
-        {
-            User user = await db.Users.FirstOrDefaultAsync(x => x.Email == model.Email && x.Password == model.Password);
-
-            if(user == null)
-            {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Auth");
             }
 
-            var token = GenerateJwtToken(user);
+            return View(CurrentUser);
+		}
 
-            if (token == null)
-                return RedirectToAction("Login", "Account");
-            else
+		public IActionResult Settings(UserViewModel model)
+		{
+            if (CurrentUser == null)
             {
-                Response.Cookies.Append("token", token);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Auth");
             }
-        }
 
-        [HttpGet]
-        public IActionResult Logout()
-        {
-            var token = Request.Cookies["token"];
-            if (token == null)
-                return RedirectToAction("Index", "Home");
+            if (model.Avatar != null)
+			{
+				byte[] imageData = null;
+				using (var binaryReader = new BinaryReader(model.Avatar.OpenReadStream()))
+				{
+					imageData = binaryReader.ReadBytes((int)model.Avatar.Length);
+				}
+				CurrentUser.Avatar = imageData;
+			}
 
-            Response.Cookies.Delete("token");
-            return RedirectToAction("Index", "Home");
-        }
+			if (model.Username != null)
+			{
+				CurrentUser.Username = model.Username;
+			}
 
-        private string GenerateJwtToken(User user)
-        {
-            var securityKey = Encoding.UTF8.GetBytes(_configuration["Jwt:Secret"]);
+			if (model.Password != null && model.NewPassword != null)
+			{
 
-            var claims = new Claim[] {
-                    new Claim(ClaimTypes.Name,user.Id.ToString()),
-                    new Claim(ClaimTypes.Email,user.Username)
-                };
-
-            var credentials = new SigningCredentials(new SymmetricSecurityKey(securityKey), SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],
-              _configuration["Jwt:Issuer"],
-              claims,
-              expires: DateTime.Now.AddDays(7),
-              signingCredentials: credentials);
+					CurrentUser.Password = Encryption.EncryptString(model.NewPassword);
+			
+			}
 
 
-            //var jwtToken = new JwtToken
-            //{
-            //    RefreshToken = new RefreshTokenGenerator().GenerateRefreshToken(32),
-            //    Token = new JwtSecurityTokenHandler().WriteToken(token)
-            //};
+			db.SaveChanges();
 
-            return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-    }
+			return View(CurrentUser);
+		}
+
+
+		public User GetUser()
+		{
+			var currentUser = HttpContext.User;
+
+			if (Request.Cookies["token"] == null || Request.Cookies["token"] == "")
+			{
+				return null;
+			}
+
+			var stream = Request.Cookies["token"];
+			var handler = new JwtSecurityTokenHandler();
+			var jsonToken = handler.ReadToken(stream);
+			_token = jsonToken as JwtSecurityToken;
+
+			//var CurrentName = _token.Claims.First(claim => claim.Type == ClaimTypes.Name).Value;
+			var CurrentId = _token.Claims.First(claim => claim.Type == "nameid").Value;
+
+			var user = db.Users.FirstOrDefault(u => u.Id.ToString() == CurrentId);
+
+			return user;
+		}
+	}
 }
