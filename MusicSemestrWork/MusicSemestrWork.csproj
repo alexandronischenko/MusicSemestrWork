@@ -22,6 +22,12 @@
     <None Remove="Services\" />
     <None Remove="Interfaces\" />
     <None Remove="Views\Auth\" />
+    <None Remove="Views\About\" />
+    <None Remove="jQuery.UI.Combined" />
+    <None Remove="Views\Chat\" />
+    <None Remove="Microsoft.jQuery.Unobtrusive.Ajax" />
+    <None Remove="Extensions\" />
+    <None Remove="jQuery" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -33,6 +39,10 @@
     <Folder Include="Services\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Views\Auth\" />
+    <Folder Include="Views\About\" />
+    <Folder Include="wwwroot\pic\" />
+    <Folder Include="Views\Chat\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
@@ -46,9 +56,15 @@
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.14.1" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.14.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.21" />
+    <PackageReference Include="jQuery.UI.Combined" Version="1.13.0" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
+    <PackageReference Include="jQuery" Version="3.6.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\pic\" />
   </ItemGroup>
 </Project>

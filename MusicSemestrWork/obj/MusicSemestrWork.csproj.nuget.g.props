@@ -20,6 +20,8 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">/Users/alexandronischenko/.nuget/packages/newtonsoft.json/10.0.1</PkgNewtonsoft_Json>
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">/Users/alexandronischenko/.nuget/packages/jquery/3.6.0</PkgjQuery>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">/Users/alexandronischenko/.nuget/packages/microsoft.entityframeworkcore.tools/5.0.10</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <PkgjQuery_UI_Combined Condition=" '$(PkgjQuery_UI_Combined)' == '' ">/Users/alexandronischenko/.nuget/packages/jquery.ui.combined/1.13.0</PkgjQuery_UI_Combined>
   </PropertyGroup>
 </Project>

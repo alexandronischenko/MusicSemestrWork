@@ -9,15 +9,18 @@
    
     <h1 class="text-center" style="font-family: Arial; font-weight: lighter;">Вход в аккаунт</h1>
 
-    <form asp-action="Login" asp-controller="Account" asp-anti-forgery="true" method="post">
-        <p>Электронная почта</p>
-        <input type="text" name="username" asp-for="Username" style="color: black">
+    <form asp-action="Login" asp-controller="Account" asp-anti-forgery="true" method="post" style="width: 50%;">
+        <div style="margin-top: 20px;">
+            <p>Электронная почта</p>
+            <input type="text" name="email" asp-for="Email" style="color: black">
+        </div>
 
-        <p>Пароль</p>
-        <input type="text" name="password" asp-for="Password" style="color: black">
-        <a href="">Забыли пароль?</a>
+        <div style="margin-top: 20px;">
+            <p>Пароль</p>
+            <input type="text" name="password" asp-for="Password" style="color: black">
+        </div>
 
-        <button type="submit" class="btn btn-dark registration-button">Войти</button>
+        <button type="submit" class="btn registration-button" style="background-color: #889382; color: white; ">Войти</button>
     </form>
 
 </div>

@@ -4,7 +4,7 @@
 }
 
 
-<form class="container" style="display: flex; flex-direction: row;" asp-action="Settings" asp-controller="Account" method="post" enctype="multipart/form-data">
+<form class="container" style="display: flex; flex-direction: row; margin-bottom: 50px; margin-top: 50px;" asp-action="Settings" asp-controller="Account" method="post" enctype="multipart/form-data">
 
     <!-- 1 column -->
     <div style="display: flex; flex-direction: column; justify-content: start; align-items: center; height: 80%; width: 40%">
@@ -13,8 +13,16 @@
             {
                 <img style='width:200px; height:200px;margin-top:10px' src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Avatar))" />
             }
-            <p>@Model.Username</p>
-            <p>Пользователь</p>
+            else
+            {
+                <img src="~/pic/acc1.png" style="width:200px; height:200px;margin-top:10px" />
+            }
+
+            <p>Пользователь: @Model.Username</p>
+            @if (Model.Birthday != null)
+            {
+                <p>Дата рождения : @Model.Birthday</p>
+            }
         </div>
     </div>
 
@@ -32,26 +40,45 @@
             <input type="text" name="name" value="@Model.Username" style="color: black;">
         </div>
 
+
+
         <div style="width: 100%;  margin-top: 5px;">
             <p style="font-size: 30px;">Аккаунт</p>
             <p style="">Обновите и редактируйте информацию, которой вы делитесь с сообществом</p>
             <p>Ваш никнейм</p>
-            <input type="text" name="Username" class="form-control" value="@Model.Username" style="color: black;">
-
-            <p style="margin-top: 5px;">
+            <input type="text" name="Username" value="@Model.Username" style="color: black;">
+            @*class="form-control"*@
+            <p style="margin-top: 5px; display: flex; flex-direction: column;">
                 <label>Change password</label>
-                <input name="CurrentPassword" type="password" class="form-control" placeholder="Current password" style="color: black;" />
-                <input name="NewPassword" type="password" class="form-control" placeholder="New password" style="margin-top: 10px; color:black;" />
+                <input name="CurrentPassword" type="text" placeholder="Current password" style="color: black;" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$"/>
+                <input name="NewPassword" type="text" placeholder="New password" style="margin-top: 10px; color:black;" />
             </p>
+            @*class="datepicker"*@
+            <p>Дата рождения</p>
 
 
-            <p>
-                <label>Аватар</label>
-                <input name="Avatar" type="file" class="form-control" />
-            </p>
+            <input type="text" name="Birthday" id="date" style="color: black;" value="@Model.Birthday" />
+            <link rel="stylesheet" href="~/lib/jquery-ui/jquery-ui.min.css">
+            @section scripts{
+                <script src="~/lib/jquery-ui/external/jquery/jquery.js"></script>
+                <script src="~/lib/jquery-ui/jquery-ui.min.js"></script>
+                <script>$(function () {
+                        $("#date").datepicker();
+                    })
+
+                    $(function () {
+                        $(".datepicker").datepicker();
+                    })</script>
+            }
+
+
+            <div class="custom-file" style="margin-top: 20px;">
+                <input type="file" class="custom-file-input" id="customFile" name="Avatar" style="background-color: #889382; color: white;">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
 
             <p style="margin-top: 20px;">
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" class="btn registration-button" style="background-color: #889382; color: white; " />
             </p>
 
 
@@ -61,10 +88,6 @@
     </div>
 
 </form>
-
-<div style="height:100px; margin-top:25px "><br><br /></div>
-<div style="height:100px; margin-top:10px "><br><br /></div>
-
 
 <nav class="navbar fixed-bottom navbar-light bg-dark">
     <a class="navbar-brand" href="#">Fixed bottom</a>

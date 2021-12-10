@@ -63,6 +63,11 @@ namespace FoodSemWork.Controllers
 				CurrentUser.Avatar = imageData;
 			}
 
+			if (model.Birthday != null)
+            {
+				CurrentUser.Birthday = model.Birthday;
+            }
+
 			if (model.Username != null)
 			{
 				CurrentUser.Username = model.Username;
@@ -70,9 +75,7 @@ namespace FoodSemWork.Controllers
 
 			if (model.Password != null && model.NewPassword != null)
 			{
-
-					CurrentUser.Password = Encryption.EncryptString(model.NewPassword);
-			
+				CurrentUser.Password = Encryption.EncryptString(model.NewPassword);	
 			}
 
 
@@ -99,7 +102,7 @@ namespace FoodSemWork.Controllers
 			//var CurrentName = _token.Claims.First(claim => claim.Type == ClaimTypes.Name).Value;
 			var CurrentId = _token.Claims.First(claim => claim.Type == "nameid").Value;
 
-			var user = db.Users.FirstOrDefault(u => u.Id.ToString() == CurrentId);
+            var user = db.Users.FirstOrDefault(u => u.Id.ToString() == CurrentId);
 
 			return user;
 		}

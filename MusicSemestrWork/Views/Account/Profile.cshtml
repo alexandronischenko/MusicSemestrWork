@@ -3,22 +3,29 @@
     Layout = "_Layout";
 }
 
-<div class="container" style="display: flex; flex-direction: row;">
+<div class="container" style="display: flex; flex-direction: row; margin-bottom: 200px; margin-top: 50px;">
 
     <!-- 1 column -->
     <div style="display: flex; flex-direction: column; justify-content: start; align-items: center; height: 80%; width: 40%">
         <div style=" height: 100px; width: 100px;">
             @if (Model.Avatar != null)
-                {
-                    <img style='width:200px; height:200px;margin-top:10px' src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Avatar))" />
-                }
-            <p>@Model.Username</p>
-            <p>Пользователь</p>
+            {
+                <img style='width:200px; height:200px;margin-top:10px' src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Avatar))" />
+            }
+            else
+            {
+                <img src="~/pic/acc1.png" style="width:200px; height:200px;margin-top:10px" />
+            }
+            <p>Пользователь: @Model.Username</p>
+            @if (Model.Birthday != null)
+            {
+                <p>Дата рождения : @Model.Birthday</p>
+            }
         </div>
     </div>
 
     <!-- 2 col -->
-    <div class="container" style="display: flex; flex-direction: column; justify-content: start; align-items: flex-start; height: 80%; width: 60%">
+    <div class="container" style="display: flex; flex-direction: column; justify-content: start; align-items: flex-start; height: 100%; width: 60%;">
         <div style="width: 100%">
             <p style="font-size: 30px;">Мой аккаунт</p>
             <p>Посмотрите и отредактируйте сведения о себе</p>
@@ -39,19 +46,8 @@
             <p>Эл. почту изменить нельзя</p>
         </div>
 
-        <a href="@Url.Action("Settings", "Account")">
+        <a href="@Url.Action("Settings", "Account")" class="btn" style="background-color: #889382; color: white;">
             Настроить пользователя
         </a>
-
-            @*<button asp-action="Settings" asp-controller="Account" type="button" class="btn btn-dark">
-                Настроить пользователя
-            </button>*@
-        
     </div>
 </div>
-
-
-
-<div style="height:100px; margin-top:25px "><br><br /></div>
-<div style="height:100px; margin-top:10px "><br><br /></div>
-

@@ -19,7 +19,7 @@ namespace MusicSemestrWork.Pages
 
         public void OnGet()
         {
-
+            
         }
     }
 }

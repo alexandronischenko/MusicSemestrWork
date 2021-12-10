@@ -17,6 +17,7 @@ namespace MusicSemestrWork.Controllers
     public class HomeController : Controller
     {
         readonly ApplicationContext db;
+        public IEnumerable<Post> Posts { get => db.Posts; }
         readonly IConfiguration _configuration;
         public User CurrentUser { get => GetUser(); }
         private JwtSecurityToken _token;
@@ -25,6 +26,7 @@ namespace MusicSemestrWork.Controllers
         {
             _configuration = configuration;
             db = options;
+
         }
         
         public IActionResult Index()
@@ -50,6 +52,8 @@ namespace MusicSemestrWork.Controllers
             var CurrentId = _token.Claims.First(claim => claim.Type == "nameid").Value;
 
             var user = db.Users.FirstOrDefault(u => u.Id.ToString() == CurrentId);
+
+            ViewBag.ShowTopBar = false;
 
             return user;
         }

@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "qEA/d8/OmY+avaWHrwTh96O57v5QShOEVPJCTYtjDqAgG+bLw1oA8TNgOZsiVsNTc0zwJOlBq6hilrG7eziN0A==",
+  "dgSpecHash": "l6pFl/VJY3ZOq7O+Em2MpcH6PjIGNY6iFeppA+FwOj8Tx3Im90RoiKwy/tS7SgxSA03LTPjFe1yvIbG80sch+g==",
   "success": true,
   "projectFilePath": "/Users/alexandronischenko/Documents/GitHub/ITIS_2021/MusicSemestrWork/MusicSemestrWork/MusicSemestrWork.csproj",
   "expectedPackageFiles": [
     "/Users/alexandronischenko/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/alexandronischenko/.nuget/packages/jquery/3.6.0/jquery.3.6.0.nupkg.sha512",
+    "/Users/alexandronischenko/.nuget/packages/jquery.ui.combined/1.13.0/jquery.ui.combined.1.13.0.nupkg.sha512",
     "/Users/alexandronischenko/.nuget/packages/microsoft.aspnet.identity.core/2.2.3/microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "/Users/alexandronischenko/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/3.1.21/microsoft.aspnetcore.authentication.jwtbearer.3.1.21.nupkg.sha512",
     "/Users/alexandronischenko/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
@@ -28,6 +30,7 @@
     "/Users/alexandronischenko/.nuget/packages/microsoft.identitymodel.protocols/5.5.0/microsoft.identitymodel.protocols.5.5.0.nupkg.sha512",
     "/Users/alexandronischenko/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/5.5.0/microsoft.identitymodel.protocols.openidconnect.5.5.0.nupkg.sha512",
     "/Users/alexandronischenko/.nuget/packages/microsoft.identitymodel.tokens/6.14.1/microsoft.identitymodel.tokens.6.14.1.nupkg.sha512",
+    "/Users/alexandronischenko/.nuget/packages/microsoft.jquery.unobtrusive.ajax/3.2.6/microsoft.jquery.unobtrusive.ajax.3.2.6.nupkg.sha512",
     "/Users/alexandronischenko/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/Users/alexandronischenko/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/Users/alexandronischenko/.nuget/packages/newtonsoft.json/10.0.1/newtonsoft.json.10.0.1.nupkg.sha512",

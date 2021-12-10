@@ -10,7 +10,7 @@ namespace MusicSemestrWork.Models
         public string Username { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
-
+        public string Birthday { get; set; }
         //public bool isToken { get; set; }
 
         public string NewPassword { get; set; }

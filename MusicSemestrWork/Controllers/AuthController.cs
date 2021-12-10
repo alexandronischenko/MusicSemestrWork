@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using MusicSemestrWork.Interfaces;
 using MusicSemestrWork.Models;
 using MusicSemestrWork.Services;
+using RegexExamples;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -48,17 +49,23 @@ namespace MusicSemestrWork.Controllers
 
                 if (user == null)
                 {
-                    var User = new User
+                    if (RegexUtilities.IsValidEmail(model.Email) && RegexUtilities.IsValidPassword(model.Password))
                     {
-                        Id = Guid.NewGuid(),
-                        Email = model.Email,
-                        Password = model.Password,
-                        Username = model.Username
-                    };
-                    db.Users.Add(User);
-                    await db.SaveChangesAsync();
+                        var User = new User
+                        {
+                            Id = Guid.NewGuid(),
+                            Email = model.Email,
+                            Password = Encryption.EncryptString(model.Password),
+                            Username = model.Username
+                        };
+                        db.Users.Add(User);
+                        await db.SaveChangesAsync();
 
-                    return RedirectToAction("Login", "Auth");
+                        return RedirectToAction("Login", "Auth");
+                    }
+
+                    return RedirectToAction("Register", "Auth");
+                    
                 }
                 else
                     return RedirectToAction("Login", "Auth");
@@ -80,7 +87,7 @@ namespace MusicSemestrWork.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(UserViewModel model)
         {
-            User user = await db.Users.FirstOrDefaultAsync(x => x.Username == model.Username && x.Password == model.Password);
+            User user = await db.Users.FirstOrDefaultAsync(x => x.Email == model.Email && x.Password == Encryption.EncryptString(model.Password));
 
             if (user == null)
             {
@@ -93,6 +100,7 @@ namespace MusicSemestrWork.Controllers
                 return RedirectToAction("Login", "Auth");
             else
             {
+                ViewBag.UserExist = "true";
                 Response.Cookies.Append("token", token);
                 return RedirectToAction("Index", "Home");
             }
@@ -104,7 +112,7 @@ namespace MusicSemestrWork.Controllers
             var token = Request.Cookies["token"];
             if (token == null)
                 return RedirectToAction("Index", "Home");
-
+            ViewBag.UserExist = "false";
             Response.Cookies.Delete("token");
             return RedirectToAction("Index", "Home");
         }
@@ -126,7 +134,6 @@ namespace MusicSemestrWork.Controllers
             var CurrentId = _token.Claims.First(claim => claim.Type == "nameid").Value;
 
             var user = db.Users.FirstOrDefault(u => u.Id.ToString() == CurrentId);
-
             return user;
         }
     }

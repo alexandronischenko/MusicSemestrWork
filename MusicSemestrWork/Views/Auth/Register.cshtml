@@ -3,20 +3,52 @@
 @{
     Layout = "_Layout";
 }
+<head>
+    <link rel="stylesheet" href="jquery-ui.min.css">
+    <script src="external/jquery/jquery.js"></script>
+    <script src="jquery-ui.min.js"></script>
+</head>
 
 <div class="registration-form">
     <h1 class="text-center" style="font-family: Arial; font-weight: lighter;">Регистрация</h1>
 
 
-    <form asp-action="Register" asp-controller="Account" asp-anti-forgery="true" method="post">
-        <p>Электронная почта</p>
-        <input type="text" name="username" asp-for="Username" style="color: black">
+    <form method="post" name="login" asp-action="Register" asp-controller="Account" asp-anti-forgery="true">
+        @*ЭЛЕКТРОННАЯ ПОЧТА*@
+        <div style="margin-top: 20px;">
+            <p>Электронная почта:</p>
+            <input type="text" name="email" asp-for="Email" style="color: black" id="emailid" autocomplete="off" />
+            <span class="errorMsg" id="erroremail">*Please provide the valid email-ID.</span>
+        </div>
 
-        <p>Пароль</p>
-        <input type="text" name="password" asp-for="Password" style="color: black">
-        @*<a href="">Забыли пароль?</a>*@
 
-        <button type="submit" class="btn btn-dark registration-button">Зарегистрироваться</button>
+        @*ИМЯ*@
+        <div style="margin-top: 20px;">
+            <label>Имя пользователя:</label>
+            <input type="text" name="username" id="username" asp-for="Username" style="color: black" autocomplete="off" />
+            <span class="errorMsg" id="errorusername">*Please provide the valid username.</span>
+        </div>
+
+        @*ПАРОЛЬ*@
+        <div style="margin-top: 20px;">
+            <p>Пароль:</p>
+            <link rel="stylesheet" href="~/lib/jquery-ui/jquery-ui.min.css">
+            @section scripts{
+                <script src="~/js/site.js"></script>
+                <script src="~/lib/jquery-ui/external/jquery/jquery.js"></script>
+                <script src="~/lib/jquery-ui/jquery-ui.min.js"></script>
+                <script>$($(function () {
+                        $(#tooltip).tooltip();
+                    });;</script>
+            }
+            <input type="text" name="password" asp-for="Password" style="color: black;" id="userpassword" autocomplete="off"
+                   data-toggle="tooltip" data-placement="top" title="От 8 до 15 симолов. Минимум 1 маленькая буква, 1 большая буква, 1 цифра">
+            <span class="errorMsg" id="errorpassword">*Please provide the valid password.</span>
+        </div>
+
+        <button type="submit" class="btn registration-button" style="background-color: #889382; color: white;" id="submitform" name="submitform">Зарегистрироваться</button>
+        @*<input type="submit" class="button" id="submitform" name="submitform" value="Register">*@
+
     </form>
 
 </div>

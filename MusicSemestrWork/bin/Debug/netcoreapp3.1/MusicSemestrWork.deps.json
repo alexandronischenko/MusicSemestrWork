@@ -36,9 +36,12 @@
           "Microsoft.EntityFrameworkCore": "5.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.10",
           "Microsoft.IdentityModel.Tokens": "6.14.1",
+          "Microsoft.jQuery.Unobtrusive.Ajax": "3.2.6",
           "Npgsql": "5.0.10",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.10",
           "System.IdentityModel.Tokens.Jwt": "6.14.1",
+          "jQuery": "3.6.0",
+          "jQuery.UI.Combined": "1.13.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -323,6 +326,12 @@
             "assemblyVersion": "2.8.0.0",
             "fileVersion": "2.8.26.1919"
           }
+        }
+      },
+      "jQuery/3.6.0": {},
+      "jQuery.UI.Combined/1.13.0": {
+        "dependencies": {
+          "jQuery": "3.6.0"
         }
       },
       "Microsoft.AspNet.Identity.Core/2.2.3": {
@@ -613,6 +622,11 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {}
+        }
+      },
+      "Microsoft.jQuery.Unobtrusive.Ajax/3.2.6": {
+        "dependencies": {
+          "jQuery": "3.6.0"
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -2750,6 +2764,20 @@
       "path": "humanizer.core/2.8.26",
       "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
     },
+    "jQuery/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sSzCTDWn15waSMjDrP21jjgG1j1pwISLaKiVCClwU4XGAmuZt+FScLkdyRvh9ppoIxAW/tJtJBYei+3CAwFQ7g==",
+      "path": "jquery/3.6.0",
+      "hashPath": "jquery.3.6.0.nupkg.sha512"
+    },
+    "jQuery.UI.Combined/1.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qV/9Xqn3lGMYi7+WGCT0mFMvuWI9x3YldIY6gVWAT0qX64ww/lMw7O/5FOPHtM3oPQ5Nw9zo0hnNHUSZKEFCRQ==",
+      "path": "jquery.ui.combined/1.13.0",
+      "hashPath": "jquery.ui.combined.1.13.0.nupkg.sha512"
+    },
     "Microsoft.AspNet.Identity.Core/2.2.3": {
       "type": "package",
       "serviceable": true,
@@ -2910,6 +2938,13 @@
       "sha512": "sha512-14Z15Rwd0V6+m7mxbRWH2CrT2PK/B3H3R8qGNDeI6lSPFIQTq/1AJaYkCGcVX1xlKSowdNYaAROMaPbiWv8KIQ==",
       "path": "microsoft.identitymodel.tokens/6.14.1",
       "hashPath": "microsoft.identitymodel.tokens.6.14.1.nupkg.sha512"
+    },
+    "Microsoft.jQuery.Unobtrusive.Ajax/3.2.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-udg7ZBszgqxloQ+ShJRONKQAzPnJIlUhKZB+AIvZdKh7CDc5Nms69T9X0hN5i+NqMmQE6njkzdCcEb16lPdJTw==",
+      "path": "microsoft.jquery.unobtrusive.ajax/3.2.6",
+      "hashPath": "microsoft.jquery.unobtrusive.ajax.3.2.6.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",

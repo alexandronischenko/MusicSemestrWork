@@ -60,6 +60,10 @@
               "target": "Package",
               "version": "[6.14.1, )"
             },
+            "Microsoft.jQuery.Unobtrusive.Ajax": {
+              "target": "Package",
+              "version": "[3.2.6, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[5.0.10, )"
@@ -71,6 +75,14 @@
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.14.1, )"
+            },
+            "jQuery": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "jQuery.UI.Combined": {
+              "target": "Package",
+              "version": "[1.13.0, )"
             }
           },
           "imports": [

@@ -17,10 +17,10 @@ header {
     flex-direction: row;
 }
 
-    .elements p {
-        margin: 8px;
-        color: white;
-    }
+.elements p {
+margin: 8px;
+color: white;
+}
 
 .main-container {
     margin-top: 50px;
@@ -32,13 +32,13 @@ header {
     /*    justify-content: flex-start*/
 }
 
-.container {
+/*.container {
     display: flex;
     flex-direction: column;
     height: 60%;
     align-items: center;
     justify-content: center;
-}
+}*/
 
 .containerfornews {
     display: flex;
@@ -73,9 +73,9 @@ input[type=text] {
     margin: 10px;
 }
 
-    .services svg {
-        margin: 0px 10px;
-    }
+.services svg {
+    margin: 0px 10px;
+}
 
 .main-text {
     left: 100px;
@@ -83,4 +83,35 @@ input[type=text] {
 
 .footer-container{
     color:white
+}
+
+.about-container {
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.about-element {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.errorMsg {
+    color: #cc0000;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.sucessMsg {
+    color: #6B8E23;
+    margin-bottom: 10px;
 }
