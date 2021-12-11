@@ -31,8 +31,29 @@ namespace MusicSemestrWork.Controllers
         
         public IActionResult Index()
         {
-            //Response.Cookies.Delete("token");
-            return View();
+            var posts = db.Posts.ToList();
+            return View(posts);
+        }
+
+        [HttpGet]
+        public IActionResult Genre()
+        {
+            var genres = db.Genres.ToList();
+            return View(genres);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Genre(string searchString)
+        {
+            var genre = from m in db.Genres
+                         select m;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                genre = genre.Where(s => s.Name!.Contains(searchString));
+            }
+
+            return View(await genre.ToListAsync());
         }
 
         public User GetUser()
@@ -57,5 +78,6 @@ namespace MusicSemestrWork.Controllers
 
             return user;
         }
+
     }
 }

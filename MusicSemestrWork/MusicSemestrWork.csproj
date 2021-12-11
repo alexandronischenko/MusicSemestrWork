@@ -28,6 +28,8 @@
     <None Remove="Microsoft.jQuery.Unobtrusive.Ajax" />
     <None Remove="Extensions\" />
     <None Remove="jQuery" />
+    <None Remove="Views\Post\" />
+    <None Remove="Views\Jenre\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -43,6 +45,8 @@
     <Folder Include="wwwroot\pic\" />
     <Folder Include="Views\Chat\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Views\Post\" />
+    <Folder Include="Views\Genre\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />

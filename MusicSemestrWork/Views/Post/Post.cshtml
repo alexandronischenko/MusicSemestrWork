@@ -1,0 +1,29 @@
+﻿@model MusicSemestrWork.Models.Post
+@{
+    Layout = "_Layout";
+}
+
+
+    <!-- ГЛАВНАЯ ЧАСТЬ -->
+    <div class="container" style="margin-bottom: 50px; margin-top: 50px;">
+        <div class="border post-detail">
+            <img style="width: 100%;" src="@Model.Image">
+            <div class="post-info">
+
+                <div style="margin: 20px;">
+                    <h5>@Model.Title</h5>
+                    <p>@Model.Description</p>
+                </div>
+
+                @*<div class="d-flex justify-content-start mt-auto">
+                    <div class="ml-auto">
+                        <button type="submit">
+                            <img src="@Model.Image" style="width:15px; height: 15px;">
+                        </button>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+    </div>
+
+
