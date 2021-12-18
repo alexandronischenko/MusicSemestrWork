@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{237E731E-1367-463A-B088-97ACFF2F66A5}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MusicSemestrWork/Pages/Shared/_Layout.cshtml">
+    <Files>
+      <File FileName="MusicSemestrWork/Views/Post/Post.cshtml" Line="23" Column="27" />
+      <File FileName="MusicSemestrWork/wwwroot/css/style.css" />
+      <File FileName="MusicSemestrWork/Views/Home/Index.cshtml" />
+      <File FileName="MusicSemestrWork/Controllers/HomeController.cs" />
+      <File FileName="MusicSemestrWork/Pages/Shared/_Layout.cshtml" Line="89" Column="18" />
+      <File FileName="MusicSemestrWork/Controllers/PostController.cs" />
+      <File FileName="MusicSemestrWork/Views/Auth/Register.cshtml" />
+      <File FileName="MusicSemestrWork/Views/Auth/Login.cshtml" />
+      <File FileName="MusicSemestrWork/Views/Home/Genre.cshtml" />
+      <File FileName="MusicSemestrWork/Controllers/AccountController.cs" />
+      <File FileName="MusicSemestrWork/Models/Genre.cs" />
+      <File FileName="MusicSemestrWork/Views/Account/Profile.cshtml" />
+      <File FileName="MusicSemestrWork/web.config" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MusicSemestrWork" expanded="True">
+            <Node name="MusicSemestrWork" expanded="True">
+              <Node name="Pages" expanded="True">
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MusicSemestrWork PreferredExecutionTarget="/Applications/Safari.app" />
+</Properties>

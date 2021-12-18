@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{2B36CBD3-F070-4FB1-A3CB-27D6C499239D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ApiServer/Models/Team.cs">
+    <Files>
+      <File FileName="ApiServer/Controllers/UserProfilesController.cs" Line="26" Column="171" />
+      <File FileName="ApiServer/Controllers/UsersController.cs" Line="22" Column="75" />
+      <File FileName="ApiServer/Models/Comment.cs" Line="1" Column="1" />
+      <File FileName="ApiServer/Models/News.cs" Line="1" Column="1" />
+      <File FileName="ApiServer/Models/Player.cs" Line="1" Column="1" />
+      <File FileName="ApiServer/Models/PremierLeagueContext.cs" Line="2" Column="31" />
+      <File FileName="ApiServer/Models/UserProfile.cs" Line="1" Column="1" />
+      <File FileName="ApiServer/Models/User.cs" Line="1" Column="1" />
+      <File FileName="ApiServer/Models/Team.cs" Line="8" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ApiServer" expanded="True">
+            <Node name="ApiServer" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Team.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ApiServer PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
