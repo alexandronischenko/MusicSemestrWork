@@ -138,4 +138,3 @@
 /Users/alexandronischenko/Documents/GitHub/ITIS_2021/MusicSemestrWork/MusicSemestrWork/obj/Debug/netcoreapp3.1/MusicSemestrWork.dll
 /Users/alexandronischenko/Documents/GitHub/ITIS_2021/MusicSemestrWork/MusicSemestrWork/obj/Debug/netcoreapp3.1/MusicSemestrWork.pdb
 /Users/alexandronischenko/Documents/GitHub/ITIS_2021/MusicSemestrWork/MusicSemestrWork/obj/Debug/netcoreapp3.1/MusicSemestrWork.genruntimeconfig.cache
-/Users/alexandronischenko/Documents/GitHub/ITIS_2021/MusicSemestrWork/MusicSemestrWork/obj/Debug/netcoreapp3.1/MusicSemestrWork.csproj.AssemblyReference.cache

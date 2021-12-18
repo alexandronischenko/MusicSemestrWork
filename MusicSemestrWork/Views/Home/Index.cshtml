@@ -1,0 +1,40 @@
+﻿
+@model List<MusicSemestrWork.Models.Post>
+
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="text-center" style="margin-top: 50px;">
+    <span style="font-size: 180%; margin: 20px;">Новости</span>
+</div>
+
+<div class="album py-5 bg-white">
+    <div class="container" style="">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+
+            @foreach (MusicSemestrWork.Models.Post post in Model)
+            {
+                <div class="col" style="min-width:350px;">
+                    <div class="card shadow-sm">
+
+                        <img src="@post.Image" style="object-fit:cover; width: 100%;" />
+
+                        <div class="card-body">
+                            <p class="card-text">@post.Title</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    @Html.ActionLink("Подробнее", "Post", "Post", new { id = post.Id })
+                                    @*<button type="button" asp-action="Index" asp-controller="Post" class="btn btn-sm btn-outline-secondary">View</button>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

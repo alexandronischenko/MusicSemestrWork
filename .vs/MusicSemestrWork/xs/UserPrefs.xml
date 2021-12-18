@@ -1,27 +1,39 @@
 ﻿<Properties StartupConfiguration="{237E731E-1367-463A-B088-97ACFF2F66A5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MusicSemestrWork/Pages/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MusicSemestrWork/Views/Home/Genre.cshtml">
     <Files>
       <File FileName="MusicSemestrWork/Views/Post/Post.cshtml" Line="23" Column="27" />
-      <File FileName="MusicSemestrWork/wwwroot/css/style.css" />
-      <File FileName="MusicSemestrWork/Views/Home/Index.cshtml" />
-      <File FileName="MusicSemestrWork/Controllers/HomeController.cs" />
-      <File FileName="MusicSemestrWork/Pages/Shared/_Layout.cshtml" Line="89" Column="18" />
-      <File FileName="MusicSemestrWork/Controllers/PostController.cs" />
+      <File FileName="MusicSemestrWork/wwwroot/css/style.css" Line="140" Column="2" />
+      <File FileName="MusicSemestrWork/Views/Home/Index.cshtml" Line="40" Column="7" />
+      <File FileName="MusicSemestrWork/Controllers/HomeController.cs" Line="42" Column="1" />
+      <File FileName="MusicSemestrWork/Pages/Shared/_Layout.cshtml" />
+      <File FileName="MusicSemestrWork/Controllers/PostController.cs" Line="14" Column="9" />
       <File FileName="MusicSemestrWork/Views/Auth/Register.cshtml" />
       <File FileName="MusicSemestrWork/Views/Auth/Login.cshtml" />
-      <File FileName="MusicSemestrWork/Views/Home/Genre.cshtml" />
-      <File FileName="MusicSemestrWork/Controllers/AccountController.cs" />
-      <File FileName="MusicSemestrWork/Models/Genre.cs" />
-      <File FileName="MusicSemestrWork/Views/Account/Profile.cshtml" />
-      <File FileName="MusicSemestrWork/web.config" />
+      <File FileName="MusicSemestrWork/Views/Home/Genre.cshtml" Line="18" Column="1" />
+      <File FileName="MusicSemestrWork/Controllers/AccountController.cs" Line="58" Column="19" />
+      <File FileName="MusicSemestrWork/Models/Genre.cs" Line="12" Column="1" />
+      <File FileName="MusicSemestrWork/Views/Jenre/Post.cshtml" Line="23" Column="27" />
+      <File FileName="MusicSemestrWork/Controllers/JenreController.cs" Line="21" Column="1" />
+      <File FileName="MusicSemestrWork/Views/Account/Profile.cshtml" Line="17" Column="42" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MusicSemestrWork" expanded="True">
             <Node name="MusicSemestrWork" expanded="True">
-              <Node name="Pages" expanded="True">
-                <Node name="Shared" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Genre" expanded="True" />
+                <Node name="Home" expanded="True">
+                  <Node name="Genre.cshtml" selected="True" />
+                </Node>
+                <Node name="Post" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+                <Node name="pic" expanded="True" />
               </Node>
             </Node>
           </Node>

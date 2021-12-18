@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MusicSemestrWork.Models.Genre>
+@{
+    Layout = "_Layout";
+}
+
+<div class="text-center" style="margin-top: 50px;">
+    <span style="font-size: 180%; margin: 20px;">Поисковик</span>
+</div>
+
+<div style="width: 100%; margin:20px; display: flex; justify-content:center">
+    <form class="form-inline" method="post" style="width: 80%; display: flex; justify-content: center">
+        <input class="form-control mr-sm-2" type="search" name="searchString" asp-for="searchString" placeholder="Search" aria-label="Search" style="width: 50%; margin: 25px;">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
+
+<div class="container">
+
+    @foreach (var item in Model)
+    {
+    <div class="search-genre">
+
+        <div class="text-break" style="width: 80%;">
+            <h4>
+                @Html.DisplayFor(modelItem => item.Name)
+            </h4>
+            <p class="text-break">
+                @Html.DisplayFor(modelItem => item.Description)
+            </p>
+            @Html.ActionLink("Подробнее", "Genre", "Genre", new { id = item.Id })
+        </div>
+
+
+        @*<div style="width: 200px; height:200px;">
+            <img src="@item.Picture" style="width: 100%; height: 100%; object-fit:cover;"/>
+        </div>*@
+
+    </div>
+    }
+
+</div>

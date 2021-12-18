@@ -1,0 +1,49 @@
+﻿<Properties StartupConfiguration="{237E731E-1367-463A-B088-97ACFF2F66A5}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MusicSemestrWork/Views/Account/Register.cshtml">
+    <Files>
+      <File FileName="MusicSemestrWork/Startup.cs" Line="96" Column="19" />
+      <File FileName="MusicSemestrWork/Views/Account/Register.cshtml" Line="18" Column="13" />
+      <File FileName="MusicSemestrWork/Controllers/AccountController.cs" Line="58" Column="21" />
+      <File FileName="MusicSemestrWork/Controllers/HomeController.cs" Line="28" Column="37" />
+      <File FileName="MusicSemestrWork/appsettings.json" Line="18" Column="1" />
+      <File FileName="MusicSemestrWork/Models/User.cs" Line="7" Column="40" />
+      <File FileName="MusicSemestrWork/ApplicationContext.cs" Line="13" Column="13" />
+      <File FileName="MusicSemestrWork/Views/Account/Login.cshtml" Line="49" Column="51" />
+      <File FileName="MusicSemestrWork/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="MusicSemestrWork/Views/Home/News.html" Line="1" Column="1" />
+      <File FileName="MusicSemestrWork/Views/Home/Privacy.cshtml" Line="4" Column="1" />
+      <File FileName="MusicSemestrWork/Pages/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="MusicSemestrWork/Pages/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="MusicSemestrWork/Pages/Error.cshtml" Line="18" Column="4" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MusicSemestrWork" expanded="True">
+            <Node name="MusicSemestrWork" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True">
+                  <Node name="Register.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/alexandronischenko/Documents/GitHub/ITIS_2021/MusicSemestrWork/MusicSemestrWork/MusicSemestrWork/Controllers/AccountController.cs" relfile="MusicSemestrWork/Controllers/AccountController.cs" line="39" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MusicSemestrWork PreferredExecutionTarget="/Applications/Safari.app" />
+</Properties>

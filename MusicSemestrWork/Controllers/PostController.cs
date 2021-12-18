@@ -17,7 +17,6 @@ namespace MusicSemestrWork.Controllers
             db = options;
 
         }
-
         [HttpGet]
         public IActionResult Post(int id)
         {

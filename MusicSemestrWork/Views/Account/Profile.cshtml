@@ -1,0 +1,53 @@
+﻿@model MusicSemestrWork.Models.User;
+@{
+    Layout = "_Layout";
+}
+
+<div class="container" style="display: flex; flex-direction: row; margin-bottom: 200px; margin-top: 50px;">
+
+    <!-- 1 column -->
+    <div style="display: flex; flex-direction: column; justify-content: start; align-items: center; height: 80%; width: 40%">
+        <div style=" height: 100px; width: 100px;">
+            @if (Model.Avatar != null)
+            {
+                <img style='width:200px; height:200px;margin-top:10px' src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Avatar))" />
+            }
+            else
+            {
+                <img src="~/pic/acc1.png" style="width:200px; height:200px;margin-top:10px" />
+            }
+            <p>Пользователь: @Model.Username</p>
+            @if (Model.Birthday != null)
+            {
+                <p>Дата рождения : @Model.Birthday</p>
+            }
+        </div>
+    </div>
+
+    <!-- 2 col -->
+    <div class="container" style="display: flex; flex-direction: column; justify-content: start; align-items: flex-start; height: 100%; width: 60%;">
+        <div style="width: 100%">
+            <p style="font-size: 30px;">Мой аккаунт</p>
+            <p>Посмотрите и отредактируйте сведения о себе</p>
+        </div>
+
+        <div style="width: 100%; margin-top: 20px;">
+            <p style="font-size: 30px;">Открытая информация</p>
+            <p>Карточка профиля видна всем пользователям этого сайта</p>
+            <p>Имя</p>
+            <input type="text" name="name" value="@Model.Username" style="color: black;">
+        </div>
+
+        <div style="width: 100%;  margin-top: 20px;">
+            <p style="font-size: 30px;">Аккаунт</p>
+            <p style="">Обновите и редактируйте информацию, которой вы делитесь с сообществом</p>
+            <p>Эл. почта для входа</p>
+            <input type="text" name="name" value="@Model.Email" style="color: black;">
+            <p>Эл. почту изменить нельзя</p>
+        </div>
+
+        <a href="@Url.Action("Settings", "Account")" class="btn" style="background-color: #889382; color: white;">
+            Настроить пользователя
+        </a>
+    </div>
+</div>
